@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOBVAC CORNER</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to JOBVAC CORNER</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{{ url_for('browse') }}">Browse Jobs</a></li>
+                <li class="dropdown">
+                    <a href="#">Recruiters</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{{ url_for('reclogin') }}">Signup/Login</a></li>
+                        <li><a href="/post_job">Post a Job</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                
+                <li><a href="{{ url_for('user_login') }}">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="search">
+        <h2>Find Your Dream Job</h2>
+        <form action="/search" method="POST"> <!-- Link to your search processing PHP file -->
+            <input type="text" name="keywords" placeholder="Keywords">
+            <input type="text" name="location" placeholder="Location">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+    <section class="featured-jobs">
+        <h2>Featured Jobs</h2>
+        <!-- Display a list of featured job listings here -->
+    </section>
+    <section class="latest-jobs">
+        <h2>Latest Jobs</h2>
+        <!-- Display a list of latest job listings here -->
+    </section>
+    <footer>
+        <p>&copy; 2023 JOBVAC CORNER</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Jobs</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/browse.css') }}">
+</head>
+<body>
+    <h1>Browse Jobs</h1>
+    
+    <ul class="job-listings">
+        {% for job in jobs %}
+        <li class="job-listing">
+            <h2>id={{job['id'] }}</h2><h2>{{ job['title'] }}</h2>
+            <p><strong>{{ job['location'] }}</strong></p>
+            <p>{{ job['description'] }}</p>
+            
+        </li>
+
+        {% endfor %}
+
+    </ul>
+    <section class="apply"><center>
+        <h2>Job Application Form</h2>
+        <form action="/send" method="POST" enctype = "multipart/form-data"> <!-- Link to your backend processing file -->
+            <input type="text" name="jid" placeholder="JOB ID" required><br><br>
+            <input type="text" name="fn" placeholder="Full Name" required><br><br>
+            <input type="email" name="email" placeholder="Email" required><br><br>
+            <input type="tel" name="phone" placeholder="Phone Number" required><br><br>
+            <input type="file" name="file" placeholder="Resume Link or File" required>pdf only<br><br>
+            <textarea name="coverletter" placeholder="Cover Letter" rows="6" required></textarea><br><br>
+            <button type="submit">Apply</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2023JOBVAC CORNER</p>
+    </footer>
+</body>
+</html>

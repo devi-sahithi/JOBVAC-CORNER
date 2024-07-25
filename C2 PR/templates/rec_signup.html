@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recruiter Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/rec_signup.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Recruiter Sign Up</h1>
+    </header>
+    <section class="signup">
+        <h2>Create a Recruiter Account</h2>
+        <form action="/rec_signup" method="POST"> <!-- Link to your backend processing file -->
+            <input type="text" name="fullname" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="tel" name="phone" placeholder="Phone Number" required>
+            <input type="text" name="company" placeholder="Company Name" required>
+            <input type="text" name="cid" placeholder="Company ID" required>
+            <button type="submit">Sign Up</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; JOBVAC CORNER</p>
+    </footer>
+</body>
+</html>

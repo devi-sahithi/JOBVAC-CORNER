@@ -1,0 +1,40 @@
+/* Reset default margin and padding for lists */
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    padding: 20px;
+}
+
+.job-listing {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.job-listing h2 {
+    margin-top: 0;
+}
+
+.job-listing p {
+    margin: 10px 0;
+}
+
+.job-listing a {
+    display: block;
+    text-align: right;
+    color: #333;
+    text-decoration: none;
+}

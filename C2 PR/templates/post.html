@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Post a Job</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/browse">Browse Jobs</a></li>
+                
+                <li><a href="/about">About</a></li>
+                
+                
+            </ul>
+        </nav>
+    </header>
+    <section class="post-job">
+        <h2>Submit a New Job</h2>
+        <form action="/job_post" method="POST"> <!-- Link to your job submission PHP file -->
+            <label for="Id">Job ID:</label>
+            <input type="text" id="jobTitle" name="id" required>
+
+
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="title" required>
+            
+            <label for="jobLocation">Job Location:</label>
+            <input type="text" id="jobLocation" name="loc" required>
+            
+            <label for="jobDescription">Job Description:</label>
+            <textarea id="jobDescription" name="desc" rows="4" required></textarea>
+
+            <label for="jobSalary">Salary:</label>
+            <input type="text" id="jobSalary" name="sal">
+            
+            <label for="rec_id">Recruiter ID</label>
+            <input type="text" id="recid" name="rec_id" required>
+            
+            
+            <label for="jobQualification">Qualification:</label>
+            <input type="text" id="jobQualification" name="qua">
+            
+            <button type="submit">Submit Job</button>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2023 JOBVAC CORNER</p>
+    </footer>
+</body>
+</html>
